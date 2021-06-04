@@ -1,7 +1,7 @@
 // 引入md5
 self.importScripts("./spark-md5.min.js")
 
-// 监听主线程发过来的信息 生成文件的 hash值
+// 监听主线程发过来的信息 生成文件的 hash值1
 self.onmessage = e => {
   const { fileChunkList } = e.data;
   const spark = new self.SparkMD5.ArrayBuffer();
