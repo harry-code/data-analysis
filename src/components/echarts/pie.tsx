@@ -1,15 +1,15 @@
 /**
  * 饼状图
- * 
+ * 线上api: https://echarts.apache.org/examples/zh/index.html#chart-type-pie
  */
 import React from 'react';
 import ReactEcharts from 'echarts-for-react';
 
 interface pageProps {
     title: {
-        text?: string;
-        subtext?: string;
-        left?: string;
+        text?: string; // 一级标题
+        subtext?: string; // 二级标题
+        left?: string; // 标题位置
     }
     legend: {
         orient?: string;
@@ -17,7 +17,8 @@ interface pageProps {
     }
     series: {
         name?: string;
-        data?: { value: number, name: string }[]
+        data?: {}[]
+        radius?: string[]
     }
 }
 
@@ -32,6 +33,7 @@ export default function Pie(props: pageProps) {
         },
         series: {
             name = '饼状图',
+            radius = ['0%', '50%'],
             data
         }
     } = props;
@@ -53,9 +55,19 @@ export default function Pie(props: pageProps) {
                 {
                     name,
                     type: 'pie',
-                    radius: '50%',
+                    radius,
                     data,
+                    avoidLabelOverlap: false,
+                    label: {
+                        show: false,
+                        position: 'center'
+                    },
                     emphasis: {
+                        label: {
+                            show: true,
+                            fontSize: '40',
+                            fontWeight: 'bold'
+                        },
                         itemStyle: {
                             shadowBlur: 10,
                             shadowOffsetX: 0,
