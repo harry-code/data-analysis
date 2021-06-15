@@ -1,10 +1,32 @@
 import React, { useEffect, useState, useRef } from 'react';
+import io from 'socket.io-client';
 // import Pie from '~/components/echarts/pie';
 // import Line from '~/components/echarts/line';
 // import Bar from '~/components/echarts/bar';
 // import Scatter from '~/components/echarts/scatter';
+// import KLine from '~/components/echarts/kLine';
+// import Radar from '~/components/echarts/radar';
+// import Radar from '~/components/echarts/radar';
 
 export default (props: any) => {
+    useEffect(() => {
+        // @ts-ignore
+        const socket = io('ws://127.0.0.1:8080/ws');
+        // socket.emit('hello world');
+        // socket.on("message", function (data: any) {
+        //     console.log(data);
+
+        //     socket.send("消息已接受到.")
+        // });
+        socket.on('news', data => {
+            console.log('服务端消息：', data);
+        })
+    }, [])
+    const sendData = () => {
+        // @ts-ignore
+        const socket = io.connect('127.0.0.1:8080');
+        socket.emit('msg', { msg: "hello world" })
+    }
     return (
         <>
             <div style={{ width: '50%', height: '400px' }}>
@@ -34,6 +56,18 @@ export default (props: any) => {
                     ]}
                 /> */}
                 {/* <Scatter data={[[10.0, 8.04]]} /> */}
+                {/* <KLine XData={['1', '2']} YData={[[1, 2, 3, 4], [5, 6, 7, 8]]} titleText="k线图" legendData={['测试']} /> */}
+                {/* <Radar
+                    titleText="雷达图"
+                    legendData={['名称1', '名称2']}
+                    indicator={[
+                        { name: '销售', max: 5000 },
+                        { name: '管理', max: 5000 },
+                        { name: '信息技术', max: 5000 },
+                    ]}
+                    data={[[1000, 1500, 2000], [2000, 2800, 3400]]}
+                /> */}
+                <button onClick={sendData}>点我</button>
             </div>
         </>
     )

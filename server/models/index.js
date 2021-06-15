@@ -2,7 +2,6 @@ const fs = require('fs')
 const path = require('path')
 const { MYSQL_CONF } = require('../conf/db')
 const Sequelize = require('sequelize')
-
 const Op = Sequelize.Op
 
 const sequelize = new Sequelize(MYSQL_CONF.database, MYSQL_CONF.user, MYSQL_CONF.password, {

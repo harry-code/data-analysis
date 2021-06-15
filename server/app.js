@@ -15,7 +15,8 @@ const { REDIS_CONF } = require('./conf/db')
 
 const loadRoute = require('./routes')
 const ENV = process.env.NODE_ENV
-
+const server = require('http').createServer(app.callback());
+const io = require("socket.io")(server);
 // session 配置
 app.keys = ['lly0131ly_#123!'] // 加密串
 
@@ -65,7 +66,7 @@ if (ENV !== 'production') {
 // routes 路由注册
 loadRoute(app)
 
-app.listen(8081, () => {
+app.listen(null, () => {
   db.sequelize
     .sync({ force: false }) // If force is true, each DAO will do DROP TABLE IF EXISTS ..., before it tries to create its own table
     .then(async () => {
@@ -81,6 +82,13 @@ app.on('error', (err, ctx) => {
   console.error('server error', err, ctx)
 });
 
+// 监听链接
+io.on('connection', function (socket) {
+  socket.emit('news', { hello: 'world' });
+  socket.on('msg', function (data) {
+    console.log(data);
+  });
+});
 // error handler
 onerror(app)
 
