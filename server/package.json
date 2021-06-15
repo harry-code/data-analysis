@@ -1,36 +1,46 @@
 {
-  "name": "koa-server",
-  "version": "0.1.0",
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
   "private": true,
-  "scripts": {
-    "start": "node bin/www",
-    "dev": "cross-env NODE_ENV=dev ./node_modules/.bin/nodemon bin/www",
-    "prd": "cross-env NODE_ENV=production pm2 start bin/www",
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "egg": {
+    "declarations": true
   },
   "dependencies": {
-    "cross-env": "^7.0.3",
-    "debug": "^4.1.1",
-    "koa": "^2.7.0",
-    "koa-bodyparser": "^4.2.1",
-    "koa-convert": "^1.2.0",
-    "koa-generic-session": "^2.1.1",
-    "koa-json": "^2.0.2",
-    "koa-logger": "^3.2.0",
-    "koa-morgan": "^1.0.1",
-    "koa-onerror": "^4.1.0",
-    "koa-redis": "^4.0.1",
-    "koa-router": "^7.4.0",
-    "koa-static": "^5.0.0",
-    "koa2-cors": "^2.0.6",
-    "mysql2": "^2.2.5",
-    "pug": "^2.0.3",
-    "redis": "^3.1.2",
-    "sequelize": "^5.21.5",
-    "socket.io": "^4.1.2",
-    "xss": "^1.0.9"
+    "egg": "^2.15.1",
+    "egg-scripts": "^2.11.0"
   },
   "devDependencies": {
-    "nodemon": "^1.19.1"
-  }
+    "autod": "^3.0.1",
+    "autod-egg": "^1.1.0",
+    "egg-bin": "^4.11.0",
+    "egg-ci": "^1.11.0",
+    "egg-mock": "^3.21.0",
+    "eslint": "^5.13.0",
+    "eslint-config-egg": "^7.1.0"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "scripts": {
+    "start": "egg-scripts start --daemon --title=egg-server-server",
+    "stop": "egg-scripts stop --title=egg-server-server",
+    "dev": "egg-bin dev",
+    "debug": "egg-bin debug",
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint .",
+    "ci": "npm run lint && npm run cov",
+    "autod": "autod"
+  },
+  "ci": {
+    "version": "10"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "harry",
+  "license": "MIT"
 }
