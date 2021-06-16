@@ -23,8 +23,8 @@
     "node": ">=8.9.0"
   },
   "scripts": {
-    "start": "egg-scripts start --port=7001 --daemon --title=egg-server-ynstServer --ignore-stderr  --sticky",
-    "stop": "egg-scripts stop --title=egg-server-ynstServer",
+    "start": "egg-scripts start --port=7001 --daemon --title=egg-server --ignore-stderr --sticky",
+    "stop": "egg-scripts stop --title=egg-server",
     "dev": "egg-bin dev --sticky",
     "debug": "egg-bin debug",
     "test": "npm run lint -- --fix && npm run test-local",

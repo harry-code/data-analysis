@@ -23,7 +23,7 @@ module.exports = appInfo => {
     redis: {
       port: 6379,
       host: '121.5.46.135',
-      auth_pass: '123456',
+      auth_pass: 'xxx',
       db: 0,
     },
   };
