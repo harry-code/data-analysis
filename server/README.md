@@ -1,33 +1,23 @@
-# server
+# 环境配置
+node.js v8+
+
+## 安装egg-init
+
+``yarn global add egg-init``
+or
+``npm i egg-init -g``
 
 
+## 安装依赖包
 
-## QuickStart
+``yarn install``
+or
+``npm i``
 
-<!-- add docs here for user -->
+## 启动项目
 
-see [egg docs][egg] for more detail.
+``npm start``
 
-### Development
+## debug 调试
 
-```bash
-$ npm i
-$ npm run dev
-$ open http://localhost:7001/
-```
-
-### Deploy
-
-```bash
-$ npm start
-$ npm stop
-```
-
-### npm scripts
-
-- Use `npm run lint` to check code style.
-- Use `npm test` to run unit test.
-- Use `npm run autod` to auto detect dependencies upgrade, see [autod](https://www.npmjs.com/package/autod) for more detail.
-
-
-[egg]: https://eggjs.org
+安装vscode插件eggjs，在调试中选择egg debug启动应用

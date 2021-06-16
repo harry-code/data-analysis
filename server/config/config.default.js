@@ -1,30 +1,31 @@
-/* eslint valid-jsdoc: "off" */
-
 'use strict';
-
-/**
- * @param {Egg.EggAppInfo} appInfo app info
- */
+const myconfig = require('./data.config');
 module.exports = appInfo => {
-  /**
-   * built-in config
-   * @type {Egg.EggAppConfig}
-   **/
-  const config = exports = {};
+  const { mysql, redis } = myconfig;
+  const config = {
+    mysql,
+    redis,
+  };
 
   // use for cookie sign key, should change to your own and keep security
-  config.keys = appInfo.name + '_1623770476195_2727';
+  config.keys = appInfo.name + '_1528897662588_2603';
 
-  // add your middleware config here
+  // add your config here
   config.middleware = [];
-
-  // add your user config here
-  const userConfig = {
-    // myAppName: 'egg',
+  config.io = {
+    init: {},
+    namespace: {
+      '/': {
+        connectionMiddleware: [ 'auth' ],
+        packetMiddleware: [],
+      },
+    },
+    redis: {
+      port: 6379,
+      host: '121.5.46.135',
+      auth_pass: '123456',
+      db: 0,
+    },
   };
-
-  return {
-    ...config,
-    ...userConfig,
-  };
+  return config;
 };

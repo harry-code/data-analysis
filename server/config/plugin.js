@@ -1,9 +1,16 @@
 'use strict';
 
-/** @type Egg.EggPlugin */
-module.exports = {
-  // had enabled by egg
-  // static: {
-  //   enable: true,
-  // }
+// had enabled by egg
+// exports.static = true;
+exports.oracle = {
+  enable: true,
+  package: 'egg-mysql',
+};
+exports.redis = {
+  enable: true,
+  package: 'egg-redis',
+};
+exports.io = {
+  enable: true,
+  package: 'egg-socket.io',
 };
