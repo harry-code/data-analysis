@@ -3,10 +3,10 @@
 const cacheService = require('../../extend/helper').cacheService;
 
 module.exports = app => {
-  class HomeController extends app.Controller {
+  class BarController extends app.Controller {
     async getCache() {
-      await cacheService('home', this);
+      await cacheService('bar', this);
     }
   }
-  return HomeController;
+  return BarController;
 };

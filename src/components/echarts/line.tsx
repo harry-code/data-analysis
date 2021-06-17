@@ -16,7 +16,7 @@ interface pageProps {
     seriesData?: any[], // 折线图数据
 }
 
-export default function Pie(props: pageProps) {
+export default function Line(props: pageProps) {
     const {
         titleText,
         smooth = false,
@@ -37,15 +37,20 @@ export default function Pie(props: pageProps) {
                     label: {
                         backgroundColor: '#6a7985'
                     }
-                }
+                },
             },
             legend: {
-                data: legendData
+                data: legendData,
+                textStyle: {
+                    color: "#fff"
+                },
+                top: 35
             },
             grid: {
+                top: '25%',
                 left: '3%',
                 right: '4%',
-                bottom: '3%',
+                bottom: '0',
                 containLabel: true
             },
             xAxis: {
@@ -63,7 +68,7 @@ export default function Pie(props: pageProps) {
                     stack: '总量',
                     type: 'line',
                     smooth,
-                    areaStyle: areaStyle !== undefined ? areaStyle[index] : '',
+                    // areaStyle: areaStyle !== undefined ? areaStyle[index] : '',
                     emphasis: {
                         focus: 'series'
                     },

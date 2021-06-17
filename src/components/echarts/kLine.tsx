@@ -30,10 +30,11 @@ export default function KLine(props: pageProps) {
                     type: 'cross'
                 }
             },
-            legend: {
-                data: legendData
-            },
+            // legend: {
+            //     data: legendData
+            // },
             grid: {
+                top: '25%',
                 left: '10%',
                 right: '10%',
                 bottom: '15%'
@@ -49,7 +50,7 @@ export default function KLine(props: pageProps) {
             },
             dataZoom: [
                 {
-                    type: 'inside',
+                    // type: 'inside',
                     start: 50,
                     end: 100
                 },

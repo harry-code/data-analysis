@@ -13,10 +13,10 @@ interface pageProps {
     }[]; // 雷达图端点名称
     shape?: string; // 雷达图形状
     legendData?: string[]; // legend标题
-    data: number[][]; // 雷达图数据
+    data?: any; // 雷达图数据
 }
 
-export default function KLine(props: pageProps) {
+export default function Radar(props: pageProps) {
     const {
         titleText,
         indicator,
@@ -32,12 +32,13 @@ export default function KLine(props: pageProps) {
             tooltip: {
                 trigger: 'axis'
             },
-            legend: {
-                data: legendData
-            },
+            // legend: {
+            // data: legendData
+            // },
             radar: {
-                shape,
-                indicator
+                // shape,
+                indicator,
+                center: ['50%', '60%'],
             },
             series: [{
                 type: 'radar',

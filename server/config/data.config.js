@@ -7,7 +7,7 @@ module.exports = {
       port: '3306',
       user: 'root',
       password: 'liuyao0131ly',
-      database: 'gok-fun',
+      database: 'data-anlysis',
     },
     // load into app, default true
     app: true,
@@ -22,6 +22,6 @@ module.exports = {
       db: 0,
     },
   },
-  updateTime: 3000, // websocket页面数据更新时间间隔,单位毫秒
-  cacheTime: 3000, // 数据库缓存到redis时间间隔,单位毫秒
+  updateTime: 10000, // websocket页面数据更新时间间隔,单位毫秒
+  cacheTime: 30000, // 数据库缓存到redis时间间隔,单位毫秒
 };

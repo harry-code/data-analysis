@@ -1,7 +1,10 @@
 'use strict';
 const cacheTime = require('../../config/data.config').cacheTime;
 const NAMESPACES = [
-  'home',
+  'pie',
+  'line',
+  'bar',
+  'radar',
 ];
 async function setCache({ app, service }) {
   for (const name of NAMESPACES) {

@@ -8,7 +8,7 @@
     "egg-mysql": "^3.0.0",
     "egg-redis": "^2.0.0",
     "egg-scripts": "^2.9.1",
-    "egg-socket.io": "^4.0.8"
+    "egg-socket.io": "^4.1.6"
   },
   "devDependencies": {
     "autod": "^3.0.1",

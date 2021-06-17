@@ -9,7 +9,7 @@ interface pageProps {
     data: any[]
 }
 
-export default function Pie(props: pageProps) {
+export default (props: pageProps) => {
     const {
         data
     } = props;
@@ -17,6 +17,13 @@ export default function Pie(props: pageProps) {
         return {
             xAxis: {},
             yAxis: {},
+            grid: {
+                top: '30%',
+                bottom: '5%',
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
             series: [{
                 symbolSize: 20,
                 data,

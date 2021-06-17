@@ -6,5 +6,8 @@
 module.exports = app => {
   const { io } = app;
   // socket.io
-  io.of('/').route('home', io.controller.home.getCache);
+  io.of('/').route('pie', io.controller.pie.getCache);
+  io.of('/').route('line', io.controller.line.getCache);
+  io.of('/').route('bar', io.controller.bar.getCache);
+  io.of('/').route('radar', io.controller.radar.getCache);
 };

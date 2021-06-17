@@ -36,12 +36,17 @@ export default function Pie(props: pageProps) {
                 }
             },
             legend: {
-                data: legendData
+                data: legendData,
+                textStyle: {
+                    color: '#fff'
+                },
+                top: 35
             },
             grid: {
+                top: '25%',
                 left: '3%',
                 right: '4%',
-                bottom: '3%',
+                bottom: '0',
                 containLabel: true
             },
             xAxis: {

@@ -45,35 +45,26 @@ export default function Pie(props: pageProps) {
                 left
             },
             tooltip: {
-                trigger: 'item'
+                trigger: 'item',
+                formatter: '{a} <br/>{b}人 : {c} ({d}%)'
             },
             legend: {
-                orient,
+                top: 30,
+                // orient,
                 left: legend_left,
+                // data: ['rose1', 'rose2', 'rose3', 'rose4', 'rose5'],
+                textStyle: {
+                    color: '#fff'
+                }
             },
             series: [
                 {
                     name,
                     type: 'pie',
                     radius,
+                    center: ['50%', '60%'],
                     data,
-                    avoidLabelOverlap: false,
-                    label: {
-                        show: false,
-                        position: 'center'
-                    },
-                    emphasis: {
-                        label: {
-                            show: true,
-                            fontSize: '40',
-                            fontWeight: 'bold'
-                        },
-                        itemStyle: {
-                            shadowBlur: 10,
-                            shadowOffsetX: 0,
-                            shadowColor: 'rgba(0, 0, 0, 0.5)'
-                        }
-                    }
+                    roseType: 'area',
                 }
             ]
         }
