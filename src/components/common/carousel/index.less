@@ -1,0 +1,51 @@
+@keyframes loopAni {
+    0% {
+        transform: translateY(0px);
+    }
+
+    20% {
+        transform: translateY(-50px);
+    }
+
+    40% {
+        transform: translateY(-100px);
+    }
+
+    60% {
+        transform: translateY(-150px);
+    }
+
+    80% {
+        transform: translateY(-200px);
+    }
+
+    100% {
+        transform: translateY(-250px);
+    }
+}
+
+.carousel {
+    height: 120px;
+    width: 80%;
+    overflow: hidden;
+    align-items: center;
+
+    &-content {
+        top: 0px;
+        animation: loopAni 10s infinite cubic-bezier(1, 0, 0.5, 0);
+        color: #fff;
+
+        &>div {
+            height: 30px;
+            border: 1px solid #106AA2;
+            margin-bottom: 20px;
+            line-height: 30px;
+            padding: 0 15px;
+        }
+
+        &:hover {
+            animation-play-state: paused;
+            -webkit-animation-play-state: paused;
+        }
+    }
+}

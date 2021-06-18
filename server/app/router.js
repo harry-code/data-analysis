@@ -10,4 +10,5 @@ module.exports = app => {
   io.of('/').route('line', io.controller.line.getCache);
   io.of('/').route('bar', io.controller.bar.getCache);
   io.of('/').route('radar', io.controller.radar.getCache);
+  io.of('/').route('news', io.controller.news.getCache);
 };

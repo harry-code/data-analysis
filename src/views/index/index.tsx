@@ -8,6 +8,7 @@ import Scatter from '~/components/echarts/scatter';
 import KLine from '~/components/echarts/kLine';
 // import GeoMap from '../../components/echarts/geoMap';
 import Radar from '~/components/echarts/radar';
+import Carousel from '~/components/common/carousel';
 import './index.less';
 
 export default () => {
@@ -15,6 +16,7 @@ export default () => {
     const [lineData, setLine] = useState<any[]>();
     const [barData, setBar] = useState<any[]>();
     const [radarData, setRadar] = useState<any[]>();
+    const [newsData, setNews] = useState<any[]>();
     useEffect(() => {
         try {
             createWS('pie', (data) => {
@@ -44,15 +46,15 @@ export default () => {
                     data.map((ite: any) => { return ite.profit }),
                 ])
             })
+            createWS('news', (data) => {
+                setNews(data)
+            })
         } catch (error) {
             console.error(error)
         }
     }, [])
     return (
         <div className="main-container">
-            {/* <div style={{ width: '100%', height: '400px' }}>
-                <GeoMap />
-            </div> */}
             <div className="main-container-row">
                 <EchartsItem title={'国科饼状图'} ComponentItem={<div style={{ width: '100%', height: '400px' }}>
                     <Pie title={{}} legend={{ legend_left: 'center' }} series={{
@@ -100,10 +102,10 @@ export default () => {
             </div>
 
             <div className="main-container-row">
-                <EchartsItem title={'国科散点图'} ComponentItem={<div style={{ width: '100%', height: '400px' }}>
-                    <Scatter data={[[10.0, 8.04], [8, 2], [5, 7], [12, 17]]} />
+                <EchartsItem title={'国科新闻'} ComponentItem={<div style={{ width: '100%', height: '400px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <Carousel data={newsData} />
                 </div>} />
-                <EchartsItem title={'国科K线图'} ComponentItem={<div style={{ width: '100%', height: '400px' }}>
+                {/* <EchartsItem title={'国科K线图'} ComponentItem={<div style={{ width: '100%', height: '400px' }}>
                     <KLine XData={['1月', '2月', '3月', '4月', '5月']} YData={[[1, 2, 3, 4], [5, 6, 1, 8], [9, 10, 4, 12], [1, 5, 4, 10], [2, 15, 10, 19]]} legendData={['涨停']} />
                 </div>} />
                 <EchartsItem title={'国科雷达图'} ComponentItem={<div style={{ width: '100%', height: '400px' }}>
@@ -118,7 +120,7 @@ export default () => {
                         ]}
                         data={radarData !== undefined ? radarData : [[]]}
                     />
-                </div>} />
+                </div>} /> */}
             </div>
 
 

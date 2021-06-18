@@ -5,6 +5,7 @@ const NAMESPACES = [
   'line',
   'bar',
   'radar',
+  'news',
 ];
 async function setCache({ app, service }) {
   for (const name of NAMESPACES) {

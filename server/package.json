@@ -4,20 +4,20 @@
   "description": "data-analysis",
   "private": true,
   "dependencies": {
-    "egg": "^2.2.1",
+    "egg": "^2.29.4",
     "egg-mysql": "^3.0.0",
-    "egg-redis": "^2.0.0",
+    "egg-redis": "^2.4.0",
     "egg-scripts": "^2.9.1",
     "egg-socket.io": "^4.1.6"
   },
   "devDependencies": {
-    "autod": "^3.0.1",
-    "autod-egg": "^1.0.0",
-    "egg-bin": "^4.3.5",
-    "egg-ci": "^1.8.0",
+    "autod": "^3.1.1",
+    "autod-egg": "^1.1.0",
+    "egg-bin": "^4.16.2",
+    "egg-ci": "^1.18.0",
     "egg-mock": "^3.14.0",
-    "eslint": "^4.11.0",
-    "eslint-config-egg": "^6.0.0"
+    "eslint": "^7.28.0",
+    "eslint-config-egg": "^9.0.0"
   },
   "engines": {
     "node": ">=8.9.0"
@@ -41,6 +41,6 @@
     "type": "git",
     "url": ""
   },
-  "author": "",
+  "author": "lly",
   "license": ""
 }

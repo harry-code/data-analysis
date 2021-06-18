@@ -46,7 +46,7 @@ export default function Pie(props: pageProps) {
             },
             tooltip: {
                 trigger: 'item',
-                formatter: '{a} <br/>{b}人 : {c} ({d}%)'
+                formatter: '{a} <br/>{b} : {c}人 ({d}%)'
             },
             legend: {
                 top: 30,
